@@ -39,6 +39,10 @@ public class YourTest {
 
 The extension exposes the same API as `WireMockServer`.
 
+## Changelog
+
+The [changelog can be found here](CHANGELOG.md).
+
 ## License
 
 [LGPLv3](https://www.gnu.org/licenses/lgpl-3.0.html)
