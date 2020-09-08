@@ -1,7 +1,5 @@
 # WireMock JUnit 5 Extension
 
-# THIS IS WORK IN PROGRESS!
-
 ## What is this?
 
 A JUnit 5 extension for [WireMock](http://wiremock.org/) - the JUnit 5 equivalent of [`@WireMockRule`](http://wiremock.org/docs/junit-rule/).
