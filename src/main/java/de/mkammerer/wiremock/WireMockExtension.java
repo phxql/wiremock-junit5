@@ -1,6 +1,9 @@
 package de.mkammerer.wiremock;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
+import com.github.tomakehurst.wiremock.common.FileSource;
+import com.github.tomakehurst.wiremock.common.Notifier;
+import com.github.tomakehurst.wiremock.common.ProxySettings;
 import com.github.tomakehurst.wiremock.core.Options;
 import org.junit.jupiter.api.extension.AfterTestExecutionCallback;
 import org.junit.jupiter.api.extension.BeforeTestExecutionCallback;
@@ -36,20 +39,44 @@ public class WireMockExtension extends WireMockServer implements BeforeTestExecu
 
     /**
      * {@link WireMockServer#WireMockServer(Options)}
-     *
-     * @param options options
      */
     public WireMockExtension(Options options) {
         super(options);
     }
 
     /**
+     * {@link WireMockServer#WireMockServer(int, Integer, FileSource, boolean, ProxySettings, Notifier)}
+     */
+    public WireMockExtension(int port, Integer httpsPort, FileSource fileSource, boolean enableBrowserProxying, ProxySettings proxySettings, Notifier notifier) {
+        super(port, httpsPort, fileSource, enableBrowserProxying, proxySettings, notifier);
+    }
+
+    /**
+     * {@link WireMockServer#WireMockServer(int, FileSource, boolean, ProxySettings)}
+     */
+    public WireMockExtension(int port, FileSource fileSource, boolean enableBrowserProxying, ProxySettings proxySettings) {
+        super(port, fileSource, enableBrowserProxying, proxySettings);
+    }
+
+    /**
+     * {@link WireMockServer#WireMockServer(int, FileSource, boolean)}
+     */
+    public WireMockExtension(int port, FileSource fileSource, boolean enableBrowserProxying) {
+        super(port, fileSource, enableBrowserProxying);
+    }
+
+    /**
      * {@link WireMockServer#WireMockServer(int)}
-     *
-     * @param port port
      */
     public WireMockExtension(int port) {
         super(port);
+    }
+
+    /**
+     * {@link WireMockServer#WireMockServer(int, Integer)}
+     */
+    public WireMockExtension(int port, Integer httpsPort) {
+        super(port, httpsPort);
     }
 
     @Override
