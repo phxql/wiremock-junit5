@@ -5,8 +5,8 @@ import com.github.tomakehurst.wiremock.common.FileSource;
 import com.github.tomakehurst.wiremock.common.Notifier;
 import com.github.tomakehurst.wiremock.common.ProxySettings;
 import com.github.tomakehurst.wiremock.core.Options;
-import org.junit.jupiter.api.extension.AfterTestExecutionCallback;
-import org.junit.jupiter.api.extension.BeforeTestExecutionCallback;
+import org.junit.jupiter.api.extension.AfterEachCallback;
+import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
 
 /**
@@ -30,7 +30,7 @@ import org.junit.jupiter.api.extension.ExtensionContext;
  * }
  * </pre>
  */
-public class WireMockExtension extends WireMockServer implements BeforeTestExecutionCallback, AfterTestExecutionCallback {
+public class WireMockExtension extends WireMockServer implements BeforeEachCallback, AfterEachCallback {
     /**
      * {@link WireMockServer#WireMockServer()}
      */
@@ -80,13 +80,13 @@ public class WireMockExtension extends WireMockServer implements BeforeTestExecu
     }
 
     @Override
-    public void afterTestExecution(ExtensionContext context) {
+    public void afterEach(ExtensionContext context) throws Exception {
         stop();
         resetAll();
     }
 
     @Override
-    public void beforeTestExecution(ExtensionContext context) {
+    public void beforeEach(ExtensionContext context) throws Exception {
         start();
     }
 }
