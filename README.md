@@ -41,6 +41,8 @@ public class YourTest {
 
 The extension exposes the same API as `WireMockServer`.
 
+See the [test](src/test/java/de/mkammerer/wiremock/WireMockExtensionTest.java) as a reference.
+
 ## Changelog
 
 The [changelog can be found here](CHANGELOG.md).
