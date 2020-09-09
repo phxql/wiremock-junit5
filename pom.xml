@@ -4,7 +4,7 @@
 
   <groupId>de.mkammerer.wiremock-junit5</groupId>
   <artifactId>wiremock-junit5</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1-SNAPSHOT</version>
 
   <name>WireMock JUnit 5 extension</name>
   <description>A JUnit 5 extension for WireMock</description>
@@ -22,7 +22,7 @@
     <url>https://github.com/phxql/wiremock-junit5</url>
     <connection>scm:git:git://github.com/phxql/wiremock-junit5.git</connection>
     <developerConnection>scm:git:git@github.com:phxql/wiremock-junit5.git</developerConnection>
-    <tag>v1.0.0</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <developers>
