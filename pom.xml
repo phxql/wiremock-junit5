@@ -22,7 +22,7 @@
 
   <scm>
     <connection>scm:git:git://github.com/phxql/wiremock-junit5.git</connection>
-    <developerConnection>scm:git:ssh://github.com:phxql/wiremock-junit5.git</developerConnection>
+    <developerConnection>scm:git:ssh://github.com/phxql/wiremock-junit5.git</developerConnection>
     <url>https://github.com/phxql/wiremock-junit5</url>
   </scm>
 
