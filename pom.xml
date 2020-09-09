@@ -21,8 +21,18 @@
   </licenses>
 
   <scm>
+    <connection>scm:git:git://github.com/phxql/wiremock-junit5.git</connection>
+    <developerConnection>scm:git:ssh://github.com:phxql/wiremock-junit5.git</developerConnection>
     <url>https://github.com/phxql/wiremock-junit5</url>
   </scm>
+
+  <developers>
+    <developer>
+      <name>Moritz Kammerer</name>
+      <email>kammerer.moritz@gmail.com</email>
+      <url>https://www.mkammerer.de</url>
+    </developer>
+  </developers>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
