@@ -22,6 +22,7 @@ then use `WireMockExtension` in your code:
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import java.net.URI;
+import de.mkammerer.wiremock.WireMockExtension;
 
 public class YourTest {
     @RegisterExtension
