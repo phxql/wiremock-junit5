@@ -21,9 +21,9 @@
   </licenses>
 
   <scm>
-    <connection>scm:git:git://github.com/phxql/wiremock-junit5.git</connection>
-    <developerConnection>scm:git:ssh://github.com/phxql/wiremock-junit5.git</developerConnection>
     <url>https://github.com/phxql/wiremock-junit5</url>
+    <connection>scm:git:git://github.com/phxql/wiremock-junit5.git</connection>
+    <developerConnection>scm:git:git@github.com:phxql/wiremock-junit5.git</developerConnection>
   </scm>
 
   <developers>
