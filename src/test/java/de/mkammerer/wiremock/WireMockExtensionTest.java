@@ -39,7 +39,7 @@ class WireMockExtensionTest {
     }
 
     @Nested
-    public class HttpOnlyTest {
+    class HttpOnlyTest {
         @RegisterExtension
         WireMockExtension wireMock = new WireMockExtension(33533);
 
@@ -57,7 +57,7 @@ class WireMockExtensionTest {
     }
 
     @Nested
-    public class HttpsOnlyTest {
+    class HttpsOnlyTest {
         @RegisterExtension
         WireMockExtension wireMock = new WireMockExtension(WireMockConfiguration.options().httpDisabled(true).httpsPort(33433));
 
@@ -73,7 +73,7 @@ class WireMockExtensionTest {
     }
 
     @Nested
-    public class HttpAndHttpsTest {
+    class HttpAndHttpsTest {
         @RegisterExtension
         WireMockExtension wireMock = new WireMockExtension(33533, 33433);
 
