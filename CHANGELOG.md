@@ -2,6 +2,10 @@
 
 ## Next version - Unreleased
 
+* No changes yet
+
+# Version 1.1 - 2020-12-02
+
 * Added helper method `getBaseUri()`
 * Updated dependency versions
 
