@@ -2,7 +2,8 @@
 
 ## Next version - Unreleased
 
-* No changes yet
+* `getBaseUri()` returns the https url if only https is enabled
+* Add helper method `getBaseUriHttps()`
 
 ## Version 1.1.0 - 2020-12-02
 

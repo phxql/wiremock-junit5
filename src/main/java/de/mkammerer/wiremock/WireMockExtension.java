@@ -98,8 +98,26 @@ public class WireMockExtension extends WireMockServer implements BeforeEachCallb
      * Returns the base URI where the wiremock server is running.
      *
      * @return the base uri where the wiremock server is running
+     * @throws IllegalStateException if wiremock server is not running or HTTP is disabled
      */
     public URI getBaseUri() {
-        return URI.create(String.format("http://localhost:%d", port()));
+        // Use https only if http is disabled and https is enabled
+        boolean https = this.options.getHttpDisabled() && this.options.httpsSettings().enabled();
+
+        return URI.create(String.format(
+            "%s://localhost:%d",
+            https ? "https" : "http",
+            https ? httpsPort() : port()
+        ));
+    }
+
+    /**
+     * Returns the HTTPS base URI where the wiremock server is running.
+     *
+     * @return the HTTPS base uri where the wiremock server is running
+     * @throws IllegalStateException if wiremock server is not running or HTTPS is not enabled
+     */
+    public URI getBaseUriHttps() {
+        return URI.create(String.format("https://localhost:%d", httpsPort()));
     }
 }
