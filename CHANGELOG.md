@@ -4,7 +4,7 @@
 
 * No changes yet
 
-# Version 1.1.0 - 2020-12-02
+## Version 1.1.0 - 2020-12-02
 
 * Added helper method `getBaseUri()`
 * Updated dependency versions
