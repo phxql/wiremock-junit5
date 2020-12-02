@@ -11,6 +11,7 @@
 1. `mvn versions:set -DgenerateBackupPoms=false -DnextSnapshot=true`
 1. `git commit -am "Start development on next version"`
 1. `git push && git push --tags`
-1. Create a version in Bintray and hit the sync to JCenter button
+1. Create a version in [Bintray](https://bintray.com/phxql/maven/wiremock-junit5) and hit the "Sync to Maven Central"
+   button
 1. `git checkout main`
 1. `git merge version-$NEW_VERSION`
