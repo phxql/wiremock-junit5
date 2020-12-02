@@ -24,7 +24,7 @@ class WireMockExtensionTest {
     WireMockExtension wireMock = new WireMockExtension();
 
     @Test
-    void test() throws IOException {
+    void integration_test() throws IOException {
         wireMock.stubFor(
             WireMock.get("/hello").willReturn(WireMock.ok("world"))
         );
@@ -50,6 +50,7 @@ class WireMockExtensionTest {
 
         @Test
         void getBaseUriHttps() {
+            // If only http is enabled, getBaseUriHttps() throws an exception
             assertThatThrownBy(() ->
                 wireMock.getBaseUriHttps()
             ).isInstanceOf(IllegalStateException.class);
@@ -63,6 +64,7 @@ class WireMockExtensionTest {
 
         @Test
         void getBaseUri() {
+            // if only https is enabled, getBaseUri() returns the https url
             assertThat(wireMock.getBaseUri()).isEqualTo(URI.create("https://localhost:33433"));
         }
 
@@ -79,12 +81,35 @@ class WireMockExtensionTest {
 
         @Test
         void getBaseUri() {
+            // if http and https is enabled, getBaseUri returns the http url
             assertThat(wireMock.getBaseUri()).isEqualTo(URI.create("http://localhost:33533"));
         }
 
         @Test
         void getBaseUriHttps() {
             assertThat(wireMock.getBaseUriHttps()).isEqualTo(URI.create("https://localhost:33433"));
+        }
+    }
+
+    @Nested
+    class NeitherHttpNorHttpsTest {
+        @RegisterExtension
+        WireMockExtension wireMock = new WireMockExtension(WireMockConfiguration.options().httpDisabled(true));
+
+        @Test
+        void getBaseUriHttp() {
+            // If neither http nor https is enabled, getBaseUri() throws an exception
+            assertThatThrownBy(() ->
+                wireMock.getBaseUri()
+            ).isInstanceOf(IllegalStateException.class);
+        }
+
+        @Test
+        void getBaseUriHttps() {
+            // If neither http nor https is enabled, getBaseUriHttps() throws an exception, too
+            assertThatThrownBy(() ->
+                wireMock.getBaseUriHttps()
+            ).isInstanceOf(IllegalStateException.class);
         }
     }
 }
