@@ -28,13 +28,15 @@ import de.mkammerer.wiremock.WireMockExtension;
 public class YourTest {
     @RegisterExtension
     WireMockExtension wireMock = new WireMockExtension();
-     
+
     @Test
     void test() {
         wireMock.stubFor(
             WireMock.get("/hello").willReturn(WireMock.ok("world"))
         );
-        URI uri = URI.create(String.format("http://localhost:%d/hello", wireMock.port()));
+        URI uri = wireMock.getBaseUri().resolve("/hello");
+        
+        // Now make your call against uri, wiremock will answer with "world"
     }
 }
 ```

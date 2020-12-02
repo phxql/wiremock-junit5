@@ -9,6 +9,8 @@ import org.junit.jupiter.api.extension.AfterEachCallback;
 import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
 
+import java.net.URI;
+
 /**
  * JUnit 5 extension which starts WireMock before the test run.
  * <p>
@@ -88,5 +90,14 @@ public class WireMockExtension extends WireMockServer implements BeforeEachCallb
     @Override
     public void beforeEach(ExtensionContext context) throws Exception {
         start();
+    }
+
+    /**
+     * Returns the base URI where the wiremock server is running.
+     *
+     * @return the base uri where the wiremock server is running
+     */
+    public URI getBaseUri() {
+        return URI.create(String.format("http://localhost:%d", port()));
     }
 }
