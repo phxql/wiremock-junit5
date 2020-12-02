@@ -27,7 +27,9 @@ import java.net.URI;
  *             WireMock.get("/hello").willReturn(WireMock.ok("world"))
  *         );
  *
- *         URI uri = URI.create(String.format("http://localhost:%d/hello", wireMock.port()));
+ *         URI uri = wireMock.getBaseUri().resolve("/hello");
+ *
+ *         // Now make your call against uri, wiremock will answer with "world"
  *     }
  * }
  * </pre>
