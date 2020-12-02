@@ -3,6 +3,8 @@
 1. `mvn clean package`
 1. `export NEW_VERSION="Next version number"`
 1. `mvn versions:set -DgenerateBackupPoms=false -DnewVersion=$NEW_VERSION`
+1. Adjust the README to use the released version
+1. Adjust the changelog for released and next version
 1. `git commit -am "Release version $NEW_VERSION"`
 1. `mvn clean deploy`
 1. `git tag version-$NEW_VERSION`
@@ -10,4 +12,5 @@
 1. `git commit -am "Start development on next version"`
 1. `git push && git push --tags`
 1. Create a version in Bintray and hit the sync to JCenter button
-1. Adjust the README and the demo projects to use the released version
+1. `git checkout main`
+1. `git merge version-$NEW_VERSION`
