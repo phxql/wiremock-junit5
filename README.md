@@ -12,7 +12,7 @@ Include the dependency in your build:
 <dependency>
   <groupId>de.mkammerer.wiremock-junit5</groupId>
   <artifactId>wiremock-junit5</artifactId>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
   <scope>test</scope>
 </dependency>
 ```
