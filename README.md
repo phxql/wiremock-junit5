@@ -4,6 +4,8 @@
 
 A JUnit 5 extension for [WireMock](http://wiremock.org/) - the JUnit 5 equivalent of [`@WireMockRule`](http://wiremock.org/docs/junit-rule/).
 
+Note that as of 2.31.0 there's support for JUnit5 in WireMock itself: http://wiremock.org/docs/junit-jupiter/
+
 ## How to use
 
 Include the dependency in your build:
